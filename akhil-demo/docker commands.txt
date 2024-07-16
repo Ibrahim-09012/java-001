@@ -1,0 +1,32 @@
+1.sudo apt update
+2.sudo apt install apt-transport-https ca-certificates curl software-properties-common
+3.curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+4.sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+
+5.sudo apt update
+6. sudo apt install docker-ce docker-ce-cli containerd.io
+7. sudo systemctl status docker
+8.mkdir -p ~/.docker/cli-plugins
+curl -SL https://github.com/docker/buildx/releases/download/v0.5.1/buildx-v0.5.1.linux-amd64 -o ~/.docker/cli-plugins/docker-buildx
+9.chmod a+x ~/.docker/cli-plugins/docker-buildx
+
+
+Create or edit ~/.docker/config.json and add the following JSON:
+
+10.{
+    "experimental": "enabled"
+}
+11. docker buildx version
+
+
+
+
+
+====================================================
+
+
+1. groups jenkins
+2. sudo usermod -aG docker jenkins
+3.logout
+4. groups jenkins
+5. sudo systemctl restart jenkins
